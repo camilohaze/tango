@@ -7,7 +7,6 @@
  * @since Twenty Thirteen 1.0
  */
 ?>
-HOLA HOLA HOLA
 <?php if ( is_single() ) : ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<h1 class="entry-title"><?php the_title(); ?></h1>
