@@ -1,62 +1,30 @@
 <?php
-/*
-* Pagina
-*/
-?>
-<?php get_header(); ?>
+/**
+ * The template for displaying pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages and that
+ * other "pages" on your WordPress site will use a different template.
+ */
+
+get_header(); ?>
+
+	<?php get_template_part('menu'); ?>
+	<div id="primary" class="content-area col-sm-9">
+		<main id="main" class="site-main" role="main">
+		
+		<?php
+
+		while ( have_posts() ) : the_post();
+
+			// Include the page content template.
+			get_template_part( 'content', 'page' );
 
 
-<header class="page-header">
-	<div class="row">
-		<?php get_template_part('menu'); ?>
-		<div class="col-sm-9" id="main-content">
-		<?php if(function_exists('kc_add_social_share')): ?>
-			<div id="share"><?php kc_add_social_share(); ?></div>
-		<?php endif ?>
-		</div>
-	</div>
-	<h1 class="titulo-principal">
-
-		<?php if (is_page())
-		{
-			single_cat_title() ;
-		} elseif (is_tag()) 
-		{
-			single_tag_title();
-		} 
-		elseif (is_author()) 
-		{
-			get_the_author_meta('display_name');
-
-		} elseif (is_day()) 
-		{
-			the_time('l, F j, Y');
-		} elseif (is_month()) 
-		{
-			the_time('F Y');
-		} elseif (is_year()) 
-		{
-			the_time('Y');
-		}
+		endwhile;
 		?>
-	</h1>
-</header><!-- .page-header -->
 
-<div id="primary" role="main">
-	
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
 
-	<div >
-			<!-- Contenido de la pagina -->
-			<?php if (have_posts()) : ?>
-			<?php while (have_posts()) : the_post(); ?>
-
-			<?php the_content(); ?>
-
-			<?php endwhile; ?>
-			<?php endif; ?>
-	</div>
-
-</div><!-- #primary -->
-
-<?php
-get_footer();
+<?php get_footer(); ?>

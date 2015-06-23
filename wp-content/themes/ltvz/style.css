@@ -1,10 +1,10 @@
 /*
 Theme Name: va_ltvz
-Theme URI: http://altavoz.telemedellin.tv
+Theme URI: http://tango.telemedellin.tv
 Description: 
 Version: 1
 Author: Victor Arias
-Author URI: http://altavoz.telemedellin.tv
+Author URI: http://tango.telemedellin.tv
 Tags: 
 License: GNU General Public License v2.0 & Apache License 2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/licenses/LICENSE-2.0
@@ -19,9 +19,10 @@ a:hover
 }
 body
 {
-	background: #000;
-	color: #FFF;
+	/*background: #000;*/
+	color: #000;
 	font-family: Arial, Helvetica, sans-serif;
+    background-image: url(images/bg-tango.jpg);
 }
 body > footer
 {
@@ -45,7 +46,6 @@ body > footer small
 }
 body > header 
 {
-	background: #fff url(images/trama_v1.jpg) repeat;
 	overflow: hidden;
 }
 body > header h1
@@ -84,7 +84,18 @@ body > header .apoyan .altavoztv
 {
 	margin: 0;
 }
-
+header > div.container
+{
+	height: 266px;
+	padding: 0px;
+}
+header > div > img.img-responsive
+{
+	background-image: url(images/header-pc.png);
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100%;
+}
 /**body > header .container-fluid .img-responsive
 {
 	width: 100%;
@@ -99,9 +110,22 @@ body > header .apoyan .altavoztv
 	padding: 8px;
 }
 
+.page-header
+{
+	margin: 0px 0 20px;
+}
+
+#primary
+{
+	margin-top: 15px;
+	background-color: rgba(228, 217, 195, 0.3);
+	padding: 15px;
+}
+
 #content
 {
 	margin-bottom: 20px;
+	padding: 0px;
 }
 #horarios th, 
 #horarios td
@@ -212,7 +236,7 @@ body > header .apoyan .altavoztv
 }
 #main-content
 {
-	background: #292929;
+	/*background: #292929;*/
 	overflow: hidden;
 }
 .home #main-content
@@ -233,6 +257,10 @@ body > header .apoyan .altavoztv
 	float: right;
 	width: auto;
 }
+#sidebar
+{
+	padding: 0px;
+}
 #sidebar #menu-icon
 {
 	cursor: pointer;
@@ -250,15 +278,15 @@ body > header .apoyan .altavoztv
 #sidebar .menu > li > a,
 #sidebar #menu-icon
 {
-	background: #AC0404;
-	color: #FFF;
+	color: #000;
 	display: block;
 	font-size: 21px;
-	font-weight: 700;
+	font-weight: 100;
 	line-height: 1;
 	margin-bottom: 2px;
 	padding: 20px 0 20px 30px;
-	text-transform: uppercase;
+	text-decoration: inherit;
+	font-family: 'Satisfy', serif;
 }
 #sidebar .menu > li > a:hover,
 #sidebar #menu-icon:hover, 
@@ -266,7 +294,7 @@ body > header .apoyan .altavoztv
 #sidebar .menu > li.current-menu-parent > a, 
 #sidebar .menu > li.current-menu-item > a
 {
-	background: #494949;
+	/*background: #494949;*/
 	text-decoration: none;
 }
 #sidebar .sub-menu
@@ -282,23 +310,23 @@ body > header .apoyan .altavoztv
 }
 #sidebar .sub-menu > li > a
 {
-	background: #fff;
-	color: #000;
+	color: rgb(203, 121, 23);
 	display: block;
-	font-size: 18px;
+	font-family: 'Satisfy', serif;
+	font-size: 17px;
 	line-height: 1;
 	margin-bottom: 2px;
-	padding: 8px 0 8px 12px;
+	padding: 8px 0 8px 25px;
+	text-decoration: inherit;
 }
 #sidebar .sub-menu > li.current-menu-item > a, 
 #sidebar .sub-menu > li.current-post-ancestor > a
 {
-	background: #e31a13;
-	color: #fff;
+	/*background: #e31a13;*/
+	color: rgb(203, 121, 23);
 }
 #sidebar .sub-menu > li > a:hover
 {
-	background: #d3d3d3;
 	text-decoration: none;
 }
 #sidebar .widget
@@ -429,7 +457,159 @@ body > header .apoyan .altavoztv
 	padding-bottom: 25px;
 }
 
-@media (max-width: 1200px){
+#main_nav > .menu > .menu-item
+{
+	background-image: url(images/iconomenu.png);
+	background-repeat: no-repeat;
+	background-position: 0px 14px;
+}
+
+#main_nav > .menu > li.menu-item-has-children > .sub-menu > .menu-item
+{
+	background-image: url(images/iconosubmenu.png);
+	background-repeat: no-repeat;
+	background-position: 0px 10px;
+}
+
+#redes
+{
+	display: block;
+	background-image: url(images/lineasredes.png);
+	background-size: 275px 84px;
+	height: 84px;
+}
+
+#facebook
+{
+	display: block;
+	float: left;
+	background-image: url(images/fb.png);
+	background-size: 35px 35px;
+	background-repeat: no-repeat;
+	width: 40px;
+	height: 35px;
+	margin-top: 11%;
+	margin-left: 7%;
+}
+
+#twitter
+{
+	display: block;
+	float: left;
+	background-image: url(images/tw.png);
+	background-size: 35px 35px;
+	background-repeat: no-repeat;
+	width: 40px;
+	height: 35px;
+	margin-top: 11%;
+}
+
+#instagram
+{
+	display: block;
+	float: left;
+	background-image: url(images/ig.png);
+	background-size: 35px 35px;
+	background-repeat: no-repeat;
+	width: 40px;
+	height: 35px;
+	margin-top: 11%;
+}
+
+.table-recomienda
+{
+	margin: 0 auto;
+}
+
+.table-recomienda td.texto
+{
+	background-color: #D5BF8D;
+}
+
+.table-recomienda span.espacio
+{
+	margin: 5px;
+}
+
+.table-recomienda img
+{
+	width: 100%;
+	height: 225px;
+}
+
+
+.noticias-tango .vc_gitem-zone{
+	-webkit-filter: sepia(1);
+	-o-filter: sepia(1);
+	filter: sepia(1);
+}
+
+.titulo-noticia h4::after{
+	content: "";
+	display: block;
+	width: 100%;
+	height: 35px;
+	background: url(http://tangoquerido.telemedellin.tv/wp-content/uploads/2015/06/iconoovernoticias.png) no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.footer
+{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	background-color: rgba(228,217,195,0.7);
+}
+
+.footer a 
+{
+	color: #000000;
+}
+
+
+.footer-container
+{
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.li-left
+{
+	float: left;
+	background-image: url(images/iconomenu.png);
+	background-repeat: no-repeat;
+	background-position: 2px -1px;
+	width: 23px;
+	height: 25px;
+	margin-top: -2px;
+}
+
+.footer-content
+{
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 2%;
+}
+
+.li-right
+{
+	float: right;
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+	background-image: url(images/iconomenu.png);
+	background-repeat: no-repeat;
+	background-position: 2px -1px;
+	width: 23px;
+	height: 25px;
+	margin-top: -2px;
+}
+
+@media (min-width: 1200px){
 	#listado .post
 	{
 		min-height: 161px;
@@ -444,11 +624,20 @@ body > header .apoyan .altavoztv
 	}
 	#sidebar .menu > li > a
 	{
-		font-size: 16px;
-		padding: 15px 0 15px 20px;
+		font-size: 22px;
+		padding: 15px 0 15px 28px;
 	}
+	.container
+	{
+		max-width: 1100px;
+	}
+	header>div.container
+	{
+		height: 255px;
+	}
+
 }
-@media (max-width: 992px){
+@media (max-width:1199px) and (min-width:992px){
 	body > header .apoyan {
 		margin-top: 115px;
 		min-height: 94px;
@@ -461,20 +650,80 @@ body > header .apoyan .altavoztv
 	body > header .apoyan .telemedellin {
 		margin: 37px 0 0 15px;
 	}
+	header > div.container
+	{
+		height: 233px;
+		padding: 0px;
+	}
 	#listado .post h1 {
 		width: 158px;
 	}
 	#sidebar .menu > li > a
 	{
-		font-size: 13px;
-		padding: 15px 0 15px 10px;
+		font-size: 20px;
+		padding: 15px 0 15px 25px;
 	}
 	#sidebar .sub-menu
 	{
 		padding-left: 10px;
 	}
+	.footer-container
+	{
+		width: 975px;
+	}
+	.footer
+	{
+		height: 100px;
+	}
+	#redes
+	{
+		  background-size: 244px 84px;
+	}
+	#facebook,
+	#twitter,
+	#youtube
+	{
+		margin-top: 12.5%;
+	}
+	.li-right
+	{
+		background-position: 2px 2px;
+	}
+	
+}
+@media (max-width:960px) and (min-width:769px){
+	.footer-container
+	{
+		width: 910px;
+	}
+	#main_nav > .menu > .menu-item
+	{
+		background-position: 0px 17px;
+	}
+	#redes
+	{
+		background-size: 235px 84px
+	}
+	#facebook,
+	#twitter,
+	#youtube
+	{
+		margin-top: 13%;
+	}
+	.container
+	{
+		max-width: 940px;
+	}
+	.li-right
+	{
+		background-position: 2px 1px;
+	}
 }
 @media (max-width: 768px){
+	body
+	{
+		background-image: url(images/bg-tango-moviles.jpg);
+	}
 	body > header .apoyan
 	{
 		float: left;
@@ -488,12 +737,36 @@ body > header .apoyan .altavoztv
 	{
 		width: 90%;
 	}
+	header > div.container
+	{
+		height: 225px;
+		padding: 0px;
+	}
+	header > div > img.img-responsive
+	{
+		background-image: url(images/header-movil.jpg);
+	}
 	#listado .post h1 {
 		width: 88%;
 	}
 	#main-content
 	{
 		padding-top: 1px;
+	}
+	.footer-container
+	{
+		width: 100%;
+		padding: 0px 10px;
+	}
+	.li-left,
+	.li-right,
+	#sidebar
+	{
+		display: none;
+	}
+	#primary
+	{
+		width: 100%;
 	}
 }
 @media (max-width: 570px){
@@ -504,5 +777,14 @@ body > header .apoyan .altavoztv
 	#listado .post
 	{
 		min-width: 177px;
+	}
+	.footer-container
+	{
+		width: 100%;
+		padding: 0px 10px;
+	}
+	header>div.container
+	{
+		height:140px
 	}
 }

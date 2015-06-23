@@ -1,8 +1,20 @@
 		</div>
-	<footer id="footer">
-		<a href="http://telemedellin.tv" target="_blank">www.telemedellin.tv</a> - Rojos por la sexta 
-		<small>Sitio web no oficial realizado por Telemedellín con fines informativos y de apoyo para el cubrimiento de la final del Medellín.</small>
-	</footer>
+		<div class="footer">
+			<div class="footer-container">
+				<div class="footer-content">
+					<p>
+						<b>
+							<a href="http://www.telemedellin.tv">www.telemedellin.tv</a> - Tango Querido
+						</b>
+					</p>
+					<p>
+						<span class="li-left"></span>
+						Sitio web no oficial realizado por Telemedellín con fines informativos y de apoyo para el cubrimiento del IX Festival de Tango Medellín.
+						<span class="li-right"></span>
+					</p>
+				</div>
+			</div>
+		</div>
 	</div>
 	<?php wp_footer(); // js scripts are inserted using this function ?>
 	<div id="fb-root"></div>

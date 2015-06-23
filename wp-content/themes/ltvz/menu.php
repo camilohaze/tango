@@ -13,4 +13,15 @@
 	?>
     </nav>
     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar1') ) : ?><?php endif; ?>
+	<div id="redes">
+		<a href="https://facebook.com/telemedellin.tv" target="_blank">
+			<span id="facebook"></span>
+		</a>
+		<a href="https://twitter.com/telemedellin" target="_blank">
+			<span id="twitter"></span>
+		</a>
+		<a href="https://instagram.com/telemedellin/" target="_blank">
+			<span id="instagram"></span>
+		</a>
+	</div>
 </div>

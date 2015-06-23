@@ -1,41 +1,57 @@
-<?php get_header(); ?>
-	<div class="row">
-		<?php get_template_part('menu'); ?>
-		<div class="col-sm-9" id="main-content">
-		<?php if(function_exists('kc_add_social_share')): ?>
-			<div id="share"><?php kc_add_social_share(); ?></div>
-		<?php endif ?>
-		<?php if(is_home()): ?>
-			<div class="row">
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar2') ) : ?><?php endif; ?>
-			</div>
-			<div class="row sociales-home">
-				<div class="col-md-6 col-sm-12">
-				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar3') ) : ?><?php endif; ?>
-				</div>
-				<div class="col-md-6 col-sm-12">
-				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar4') ) : ?><?php endif; ?>
-				</div>
-			</div>
-		<?php else: //is_home?>
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * e.g., it puts together the home page when no home.php file exists.
+ *
+ * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
+ */
+
+get_header(); ?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		<?php if ( have_posts() ) : ?>
+
+			<?php if ( is_home() && ! is_front_page() ) : ?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+			<?php endif; ?>
+
+			<?php    
 			
-			<?php if(is_single() || is_page()): ?>
-				<div id="single">
+			while ( have_posts() ) : the_post();
 
-				<div class="row-fluid">
-					<?php if ( have_posts() ) : ?>
-						<?php while ( have_posts() ) :?>
-							<?php 
-								the_post();
-								 get_template_part( 'content', get_post_format() );
-							 ?>
-						<?php endwhile; ?>
-					<?php endif; //have_posts?>	
-					</div>
-				<?php endif; ?>
-			</div>
+				/*
+				 * Include the Post-Format-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				 */
+				get_template_part( 'content', get_post_format() );
 
-		<?php endif; //is_home?>
-		</div>
-	</div>
+	
+			endwhile;
+
+			// Previous/next page navigation.
+			the_posts_pagination( array(
+				'prev_text'          => __( '', 'quidus' ),
+				'next_text'          => __( '', 'quidus' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'quidus' ) . ' </span>',
+			) );
+
+		// If no content, include the "No posts found" template.
+		else :
+			get_template_part( 'content', 'none' );
+
+		endif;
+		?>
+
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
 <?php get_footer(); ?>
